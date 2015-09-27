@@ -26,7 +26,11 @@ public class DateTimeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().write(this.dateTimeService.getDateTime(this.getTimezone(req)));
+        if ("/".equals(req.getRequestURI())) {
+            resp.getWriter().write(this.dateTimeService.getDateTime(this.getTimezone(req)));
+        } else {
+            this.send404(resp);
+        }
     }
 
     private String getTimezone(HttpServletRequest req) {
@@ -35,5 +39,10 @@ public class DateTimeServlet extends HttpServlet {
             return "UTC";
         }
         return timezone;
+    }
+
+    private void send404(HttpServletResponse resp) throws IOException {
+        resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+        resp.getWriter().write("Resource not found");
     }
 }

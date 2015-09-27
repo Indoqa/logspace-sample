@@ -1,0 +1,9 @@
+{
+  "id" : "logspace-sample",
+  "class-name" : "io.logspace.agent.hq.HqAgentController",
+  "parameters" : {
+    "space-token" : "8kn3GGXvVVyeeE2m2eyu",
+    "base-url" : "http://localhost:9300",
+    "queue-directory" : "./target/"
+  }
+}

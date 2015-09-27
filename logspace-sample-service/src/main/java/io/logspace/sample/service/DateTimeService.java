@@ -20,14 +20,21 @@ public final class DateTimeService {
         long start = System.nanoTime();
         String dateTimeString = this.getDateTimeAsString(timezone);
 
-        // this.usageAgent.logDateTimeUsage(timezone, System.nanoTime() - start);
+        this.usageAgent.logDateTimeUsage(timezone, System.nanoTime() - start);
 
         return dateTimeString;
     }
 
-    private String getDateTimeAsString(String timezone) {
+    private String getDateTimeAsString(String requestedTimezone) {
         DateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-        df.setTimeZone(TimeZone.getTimeZone(timezone));
-        return df.format(new Date());
+
+        TimeZone timezone = TimeZone.getTimeZone(requestedTimezone);
+        df.setTimeZone(timezone);
+
+        return new StringBuilder().append(df.format(new Date()))
+            .append(" (Timezone: ")
+            .append(timezone.getDisplayName())
+            .append(")")
+            .toString();
     }
 }

@@ -43,6 +43,10 @@
     <project.license.rootDir>${basedir}/..</project.license.rootDir>
 
     <logspace-version>${project.version}</logspace-version>
+    
+    <slf4j-version>1.7.7</slf4j-version>
+    <commons-logging-version>99.0-does-not-exist</commons-logging-version>
+    <log4j-version>2.1</log4j-version>    
   </properties>
 
   <modules>
@@ -70,6 +74,33 @@
         <version>${logspace-version}</version>
         <scope>runtime</scope>
       </dependency>
+      
+      <!-- Logging -->
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${slf4j-version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>jcl-over-slf4j</artifactId>
+        <version>${slf4j-version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-bom</artifactId>
+        <version>${log4j-version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>commons-logging</groupId>
+        <artifactId>commons-logging</artifactId>
+        <version>${commons-logging-version}</version>
+        <scope>provided</scope>
+      </dependency>
+      
       
       <!-- Internal -->
       <dependency>
