@@ -118,7 +118,7 @@
 
   <build>
     <pluginManagement>
-  	  <plugins>
+      <plugins>
         <plugin>
           <groupId>com.mycila</groupId>
           <artifactId>license-maven-plugin</artifactId>
@@ -134,36 +134,29 @@
             </excludes>
           </configuration>
         </plugin>
-      <plugin>
-        <groupId>org.apache.rat</groupId>
-        <artifactId>apache-rat-plugin</artifactId>
-        <configuration>
-          <excludes>
-            <exclude>**/bin/*</exclude>
-            <exclude>README.md</exclude>
-            <exclude>**/_rest_managed.json</exclude>
-            <exclude>**/logspace.io.txt</exclude>
-            <exclude>**/dependency-reduced-pom.xml</exclude>
-            <exclude>**/.recommenders/**</exclude>
-            <exclude>**/configs/**</exclude>
-            <exclude>**/*.json</exclude>
-          </excludes>
-          <licenses>
-            <license implementation="org.apache.rat.analysis.license.SimplePatternBasedLicense">
-              <licenseFamilyCategory>EPL</licenseFamilyCategory>
-              <licenseFamilyName>Eclipse Public License - v 1.0</licenseFamilyName>
-              <patterns>
-                <pattern>Eclipse Public License</pattern>
-              </patterns>
-            </license>
-          </licenses>
-          <licenseFamilies>
-            <licenseFamily implementation="org.apache.rat.license.SimpleLicenseFamily">
-              <familyName>Eclipse Public License - v 1.0</familyName>
-            </licenseFamily>
-          </licenseFamilies>
-        </configuration>
-      </plugin>        
+        <plugin>
+          <groupId>org.apache.rat</groupId>
+          <artifactId>apache-rat-plugin</artifactId>
+          <configuration>
+            <includes>
+              <include>**/*.java</include>
+            </includes>
+            <licenses>
+              <license implementation="org.apache.rat.analysis.license.SimplePatternBasedLicense">
+                <licenseFamilyCategory>EPL</licenseFamilyCategory>
+                <licenseFamilyName>Eclipse Public License - v 1.0</licenseFamilyName>
+                <patterns>
+                  <pattern>Eclipse Public License</pattern>
+                </patterns>
+              </license>
+            </licenses>
+            <licenseFamilies>
+              <licenseFamily implementation="org.apache.rat.license.SimpleLicenseFamily">
+                <familyName>Eclipse Public License - v 1.0</familyName>
+              </licenseFamily>
+            </licenseFamilies>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>  
   </build>
