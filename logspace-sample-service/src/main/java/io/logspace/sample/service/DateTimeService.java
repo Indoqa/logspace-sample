@@ -18,13 +18,14 @@ public final class DateTimeService {
 
     public String getDateTime(String timezone) {
         long start = System.nanoTime();
-        String dateTimeString = this.getDateTimeAsString(timezone);
-
-        this.usageAgent.logDateTimeUsage(timezone, System.nanoTime() - start);
-
-        return dateTimeString;
+        try {
+            return this.getDateTimeAsString(timezone);
+        } finally {
+            this.usageAgent.logDateTimeUsage(timezone, System.nanoTime() - start);
+        }
     }
 
+    // check for available timezones
     private String getDateTimeAsString(String requestedTimezone) {
         DateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 
