@@ -15,7 +15,7 @@ import io.logspace.agent.api.event.Event;
  */
 public class UsageAgent extends AbstractApplicationAgent {
 
-    /**
+    /*
      * explain id and type here
      */
     public UsageAgent() {

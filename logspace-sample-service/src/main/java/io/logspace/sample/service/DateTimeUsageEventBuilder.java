@@ -7,7 +7,7 @@ import io.logspace.agent.api.event.Optional;
 
     private static final String TYPE = "date-time";
 
-    private static final String PROPERTY_SERVICE_RESPONSE_TIME = "query_string";
+    private static final String PROPERTY_SERVICE_RESPONSE_TIME = "response_time";
     private static final String PROPERTY_TIMEZONE = "timezone";
 
     private Optional<String> type = Optional.of(TYPE);
