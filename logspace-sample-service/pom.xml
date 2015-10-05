@@ -26,7 +26,6 @@
     <dependency>
       <groupId>io.logspace</groupId>
       <artifactId>logspace-agent-api</artifactId>
-      <scope>provided</scope>
     </dependency>
   </dependencies>
 
