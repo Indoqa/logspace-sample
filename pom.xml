@@ -83,24 +83,9 @@
       </dependency>
       <dependency>
         <groupId>org.slf4j</groupId>
-        <artifactId>jcl-over-slf4j</artifactId>
+        <artifactId>slf4j-simple</artifactId>
         <version>${slf4j-version}</version>
       </dependency>
-
-      <dependency>
-        <groupId>org.apache.logging.log4j</groupId>
-        <artifactId>log4j-bom</artifactId>
-        <version>${log4j-version}</version>
-        <scope>import</scope>
-        <type>pom</type>
-      </dependency>
-      <dependency>
-        <groupId>commons-logging</groupId>
-        <artifactId>commons-logging</artifactId>
-        <version>${commons-logging-version}</version>
-        <scope>provided</scope>
-      </dependency>
-      
       
       <!-- Internal -->
       <dependency>
