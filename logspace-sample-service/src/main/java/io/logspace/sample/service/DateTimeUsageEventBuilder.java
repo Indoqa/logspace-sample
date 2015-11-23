@@ -8,7 +8,6 @@
 package io.logspace.sample.service;
 
 import io.logspace.agent.api.event.AbstractEventBuilder;
-import io.logspace.agent.api.event.Optional;
 
 /*default*/ class DateTimeUsageEventBuilder extends AbstractEventBuilder {
 
@@ -17,10 +16,8 @@ import io.logspace.agent.api.event.Optional;
     private static final String PROPERTY_SERVICE_RESPONSE_TIME = "response_time";
     private static final String PROPERTY_TIMEZONE = "timezone";
 
-    private Optional<String> type = Optional.of(TYPE);
-
     public DateTimeUsageEventBuilder(String agentId, String system) {
-        super(agentId, system);
+        super(agentId, system, null);
     }
 
     public DateTimeUsageEventBuilder addServiceResponseTime(final long responseTime) {
@@ -34,7 +31,7 @@ import io.logspace.agent.api.event.Optional;
     }
 
     @Override
-    protected Optional<String> getType() {
-        return this.type;
+    protected String getType() {
+        return TYPE;
     }
 }
