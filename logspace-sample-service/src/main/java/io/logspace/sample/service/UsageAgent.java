@@ -23,7 +23,8 @@ public class UsageAgent extends AbstractApplicationAgent {
     }
 
     public void logDateTimeUsage(String timezone, long serviceResponseTime) {
-        Event event = new DateTimeUsageEventBuilder(this.getId(), this.getSystem()).addTimeZone(timezone)
+        Event event = new DateTimeUsageEventBuilder(this.getEventBuilderData())
+            .addTimeZone(timezone)
             .addServiceResponseTime(serviceResponseTime)
             .toEvent();
         this.sendEvent(event);

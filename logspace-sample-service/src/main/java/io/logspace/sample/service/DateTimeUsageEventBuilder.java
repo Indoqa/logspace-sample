@@ -8,6 +8,7 @@
 package io.logspace.sample.service;
 
 import io.logspace.agent.api.event.AbstractEventBuilder;
+import io.logspace.agent.api.event.EventBuilderData;
 
 /*default*/ class DateTimeUsageEventBuilder extends AbstractEventBuilder {
 
@@ -16,8 +17,8 @@ import io.logspace.agent.api.event.AbstractEventBuilder;
     private static final String PROPERTY_SERVICE_RESPONSE_TIME = "response_time";
     private static final String PROPERTY_TIMEZONE = "timezone";
 
-    public DateTimeUsageEventBuilder(String agentId, String system) {
-        super(agentId, system, null);
+    public DateTimeUsageEventBuilder(EventBuilderData eventBuilderData) {
+        super(eventBuilderData);
     }
 
     public DateTimeUsageEventBuilder addServiceResponseTime(final long responseTime) {
