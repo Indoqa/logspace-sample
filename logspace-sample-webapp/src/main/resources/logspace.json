@@ -2,7 +2,7 @@
   "id" : "logspace-sample",
   "class-name" : "io.logspace.agent.hq.HqAgentController",
   "parameters" : {
-    "space-token" : "sample",
+    "space-token" : "8kn3GGXvVVyeeE2m2eyu",
     "hq-url" : "http://localhost:4567",
     "queue-directory" : "./target/"
   }
