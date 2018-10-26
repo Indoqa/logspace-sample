@@ -60,7 +60,7 @@ pipeline {
       }
       
       steps {
-        sh 'mvn deploy ${MAVEN_BUILD_PROPERTIES}'
+        sh 'mvn deploy ${DEPLOY_SETTINGS} ${MAVEN_BUILD_PROPERTIES}'
       }
     }
   }
